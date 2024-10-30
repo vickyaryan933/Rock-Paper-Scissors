@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaeaea; /* Slightly darker background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+#heading {
+    background-color: #2c3e50; /* Darker heading background */
+    color: white;
+    font-size: 40px; /* Increased font size */
+    font-weight: bolder;
+    padding: 20px; /* Added padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 70px;
+}
+
+.choice {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.choice img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+    background-color: black;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%; /* Fixed width for scoreboard */
+    position: relative;
+    left: 100px;
+}
+
+.score {
+    background-color: #fff; /* White background for score */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for score section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center; /* Center text */
+    flex: 1; /* Make score sections equal width */
+    margin: 0 10px; /* Margin between score sections */
+}
+
+.score p {
+    margin: 5px 0; /* Spacing for paragraphs */
+    font-size: 28px; /* Font size for scores */
+    color: #2980b9; /* Color for score numbers */
+}
+
+.score p:last-child {
+    font-size: 18px; /* Smaller font size for labels */
+    color: #7f8c8d; /* Color for labels */
+}
+
+.msg-container {
+    margin-top: 30px; /* Margin above message container */
+    padding: 15px 30px; /* Padding for message container */
+    background-color: #3498db; /* Blue background */
+    color: white; /* White text */
+    font-size: 24px; /* Font size for message */
+    font-weight: bold; /* Bold text */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+    text-align: center; /* Center text */
+}
+
+.winner {
+    background-color: #27ae60; /* Green for win */
+}
+
+.loser {
+    background-color: #e74c3c; /* Red for loss */
+}
+
+.tie {
+    background-color: #f39c12; /* Yellow for tie */
+}
+
+/* Responsive Design */
+
+/* Large Devices (Desktops) */
+@media (min-width: 1200px) {
+    #heading {
+        font-size: 48px; /* Larger heading font size */
+    }
+
+    .score p {
+        font-size: 32px; /* Larger score font size */
+    }
+
+    .msg-container {
+        font-size: 28px; /* Larger message font size */
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1199px) and (min-width: 768px) {
+
+    #heading {
+        background-color: #2c3e50;
+        color: white;
+        font-size: 35px;
+        font-weight: bolder;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .choices {
+        gap: 30px; /* Adjust gap for tablet */
+        margin: 50px; /* Adjust margin for choices section */
+    }
+
+    .score-board {
+        width: 90%; /* Wider scoreboard for tablet */
+        position: relative;
+        left: 30px;
+    }
+
+    .msg-container {
+        font-size: 26px; /* Adjust message font size */
+        padding: 15px 25px; /* Adjust padding */
+    }
+
+    .choice {
+        width: 150px; /* Adjust choice button for tablet */
+        height: 150px; /* Adjust choice button for tablet */
+    }
+}
+
+/* Small Devices (Landscape Mobile) */
+@media (max-width: 767px) and (min-width: 480px) {
+    #heading {
+        font-size: 32px; /* Adjust font size for small devices */
+    }
+
+    .score-board {
+        flex-direction: row; /* Keep scores horizontally aligned */
+        width: 100%; /* Full width for scoreboard */
+        justify-content: space-around; /* Space out score sections */
+    }
+
+    .score {
+        width: 45%; /* Slightly reduce score width */
+        margin: 0 5px; /* Reduce margin */
+    }
+
+    .msg-container {
+        font-size: 20px; /* Adjust message font size */
+        padding: 10px 15px; /* Adjust padding */
+        width: 90%; /* Adjust width for message container */
+    }
+
+    .choices {
+        flex-wrap: wrap; /* Allow wrapping for choices */
+        justify-content: center; /* Center align choices */
+        margin: 20px; /* Adjust margin for choices section */
+    }
+
+    .choice {
+        width: 120px; /* Smaller choice button for small devices */
+        height: 120px; /* Smaller choice button for small devices */
+    }
+}
+
+/* Responsive Design */
+
+/* Large Devices (Desktops) */
+@media (min-width: 1200px) {
+    #heading {
+        font-size: 48px; /* Larger heading font size */
+    }
+
+    .score p {
+        font-size: 32px; /* Larger score font size */
+    }
+
+    .msg-container {
+        font-size: 28px; /* Larger message font size */
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1199px) and (min-width: 768px) {
+
+    #heading {
+        background-color: #2c3e50;
+        color: white;
+        font-size: 35px;
+        font-weight: bolder;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .choices {
+        gap: 30px; /* Adjust gap for tablet */
+        margin: 50px; /* Adjust margin for choices section */
+    }
+
+    .score-board {
+        width: 90%; /* Wider scoreboard for tablet */
+        position: relative;
+        left: 30px;
+    }
+
+    .msg-container {
+        font-size: 26px; /* Adjust message font size */
+        padding: 15px 25px; /* Adjust padding */
+    }
+
+    .choice {
+        width: 150px; /* Adjust choice button for tablet */
+        height: 150px; /* Adjust choice button for tablet */
+    }
+}
+
+/* Small Devices (Landscape Mobile) */
+@media (max-width: 767px) and (min-width: 480px) {
+    #heading {
+        font-size: 28px; /* Adjust font size for small devices */
+    }
+
+    .score-board {
+        flex-direction: row; /* Keep scores horizontally aligned */
+        width: 60%; /* Full width for scoreboard */
+        justify-content: space-around; /* Space out score sections */
+    }
+
+    .score {
+        width: 45%; /* Slightly reduce score width */
+        margin: 0 5px; /* Reduce margin */
+    }
+
+    .msg-container {
+        font-size: 20px; /* Adjust message font size */
+        padding: 10px 15px; /* Adjust padding */
+        width: 98%; /* Adjust width for message container */
+    }
+
+    .choices {
+        flex-wrap: wrap; /* Allow wrapping for choices */
+        justify-content: center; /* Center align choices */
+        margin: 50px; /* Adjust margin for choices section */
+    }
+
+    .choice {
+        width: 120px; /* Smaller choice button for small devices */
+        height: 120px; /* Smaller choice button for small devices */
+    }
+}
+
+/* Very Small Devices (Portrait Mobile) */
+@media (max-width: 479px) {
+    #heading {
+        font-size: 15px; /* Font size for very small devices */
+        padding: 15px; /* Adjust padding */
+        position: relative;
+        bottom: 124px;
+    }
+
+    .score-board {
+        flex-direction: column; /* Stack scores vertically */
+        align-items: center; /* Center align */
+        width: 40%; /* Full width for scoreboard */
+        margin-bottom: 20px; /* Margin below scoreboard */
+    }
+
+    .score {
+        width: 90%; /* Full width for score sections */
+        margin-bottom: 10px; /* Space between stacked scores */
+        padding: 10px;
+    }
+
+    .msg-container {
+        font-size: 16px; /* Adjust message font size */
+        padding: 10px; /* Adjust padding */
+        width: 100%; /* Full width for message container */
+    }
+
+    .choices {
+        align-items: center; /* Center align choices */
+        margin: 10px; /* Adjust margin for choices section */
+        position: relative;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .choice {
+        width: 80px; /* Smaller choice button for very small devices */
+        height: 80px; /* Smaller choice button for very small devices */
+    }
+
+    .choice img {
+        width: 100px;
+        height: 108px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+}
+
+
+
